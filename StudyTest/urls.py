@@ -15,21 +15,13 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
-from django.http import HttpResponse
+from django.urls import path, include
 
 
-# def projects(request):
-#     return HttpResponse("Here Our Products")
-#
-#
-# def project(request, pk):
-#     return HttpResponse("Single Project" + '  ' + str(pk))
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('projects/', projects, name="projects"),
-    path('project/<str:pk>/', project, name="project"),
+    path(' ', include('projects.urls'))
 
 ]
