@@ -1,8 +1,35 @@
 {#{% include 'navbar.html' %}#}
 
 {%  extends 'main.html' %}
-{%  block content %}
+{%  block content  %}
+{{ message }}
+<p>Hello buddy you are page number is {{ page }}</p>
 
+<!--write logic in this page-->
+
+{% if number > 10 %}
+    <p>Number is Greater than 10</p>
+{%  elif number == 10 %}
+    <p>Number is Exactly 10</p>
+{% else %}
+    <p>Number is Less than 10</p>
+{%  endif  %}
+
+    <hr>
+{#    More dynamic data#}
+    <h1>Projcets</h1>
+    <ul>
+    {%  for project in projects  %}
+{#        <li>Title : {{ project.id}}</li>#}
+{#        <li>Title : <a href="/abc/project/{{project.id}}">{{ project.title}} </a>---- {{ project.description}}</li>#}
+        <li>Title : <a href="{%  url 'project1' project.id %}">{{ project.title}} </a>---- {{ project.description}}</li>
+{#        <li>description : {{ project.description}}</li>#}
+    {%  endfor %}
+    </ul>
+
+
+
+    <hr>
 <h1> Project Templates</h1>
 
 <p> It is a long established fact that a reader will be distracted by the readable content of
