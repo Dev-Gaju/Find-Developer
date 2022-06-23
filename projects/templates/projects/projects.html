@@ -2,41 +2,32 @@
 
 {%  extends 'main.html' %}
 {%  block content  %}
-{{ message }}
-<p>Hello buddy you are page number is {{ page }}</p>
 
-<!--write logic in this page-->
+    <h1>Table</h1>
+    <table>
+        <tr>
+            <th>Project</th>
+            <th>Votes</th>
+            <th>Ratio</th>
+            <th>Created</th>
+        </tr>
+        {%  for project in projects  %}
+            <tr>
+                <td>{{ project.title}}</td>
+                <td>{{ project.vote_total}}</td>
+                <td>{{ project.vote_ratio}}%</td>
+                <td>{{ project.created}}</td>
+                <td><a href="{%  url 'project1' project.id %}">View</a></td>
 
-{% if number > 10 %}
-    <p>Number is Greater than 10</p>
-{%  elif number == 10 %}
-    <p>Number is Exactly 10</p>
-{% else %}
-    <p>Number is Less than 10</p>
-{%  endif  %}
+            </tr>
+        {%  endfor %}
+    </table>
+
+
+
+
+
 
     <hr>
-{#    More dynamic data#}
-    <h1>Projcets</h1>
-    <ul>
-    {%  for project in projects  %}
-{#        <li>Title : {{ project.id}}</li>#}
-{#        <li>Title : <a href="/abc/project/{{project.id}}">{{ project.title}} </a>---- {{ project.description}}</li>#}
-        <li>Title : <a href="{%  url 'project1' project.id %}">{{ project.title}} </a>---- {{ project.description}}</li>
-{#        <li>description : {{ project.description}}</li>#}
-    {%  endfor %}
-    </ul>
-
-
-
-    <hr>
-<h1> Project Templates</h1>
-
-<p> It is a long established fact that a reader will be distracted by the readable content of
-    a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-    normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-    Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search
-    for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
-    over the years, sometim es by accident, sometimes on pu rpose (injected humour and the like)</p>
 
 {%  endblock content %}

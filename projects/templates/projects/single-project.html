@@ -6,6 +6,14 @@
     <h1>Single  Project Templates</h1>
 
     <h4>{{ project.title }}</h4>
+
+    <hr>
+    {%  for tag in tags %}
+    <span style="border: 1px solid  gray">{{ tag }}</span>
+
+    {%  endfor %}
+
+    <hr>
 {#    <br>#}
     <p>{{ project.description }}</p>
 
