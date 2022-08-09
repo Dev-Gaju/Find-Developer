@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z5p3otx8f-*p%7^l7gz&@sdn8un2w2%w-acc_-kokk5p28(346'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True   #Its false mean not work any link so have to describe allowed host little under when go production.
 
 ALLOWED_HOSTS = []
 
@@ -128,8 +128,9 @@ STATICFILES_DIRS =[
     BASE_DIR / 'static'
 ]
  # save image in links with urls static function
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-# STATIC_ROOT = os.path.join(BASE_DIR,  'staticfiles')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')  #work in einvironment
+STATIC_ROOT = os.path.join(BASE_DIR,  'staticfiles')   #work in production also install whitenoise package.
+#run python manage.run collectstatic
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
