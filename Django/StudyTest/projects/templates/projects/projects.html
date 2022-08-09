@@ -1,9 +1,9 @@
 {%  extends 'main.html' %}
 {## always the first tag#}
 
-{% include 'navbar.html' %}
+{#{% include 'navbar.html' %}#}
 {%  block content  %}
-    <img src="{{ project.feature_images.url }}">
+
     <h1>Table</h1>
     <table>
         <tr>
@@ -14,7 +14,6 @@
             <th></th>
         </tr>
         {%  for project in projects  %}
-
             <tr>
                 <td>{{ project.title}}</td>
                 <td>{{ project.vote_total}}</td>

@@ -127,9 +127,9 @@ STATICFILES_DIRS =[
     # os.path.join(BASE_DIR, 'static')   #older version of django
     BASE_DIR / 'static'
 ]
- # save image
+ # save image in links with urls static function
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-STATIC_ROOT = os.path.join(BASE_DIR,  'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR,  'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
