@@ -1,13 +1,15 @@
 from django.db import models
 import uuid  # means unique id
+from users.models import Profiles
 
 
 # Create your models here.
 
 class Project(models.Model):
+    owner = models.ForeignKey(Profiles, null=True, blank=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)  # blank mean form could be empty
-    feature_images = models.ImageField(blank=True, null=True, default="default.jpg",)
+    feature_images = models.ImageField(blank=True, null=True, default="default.jpg", )
     # upload_to = 'profile_pic', default = "default.jpg"
     demo_link = models.CharField(null=True, blank=True, max_length=2000)
     source_link = models.CharField(max_length=20000, null=True, blank=True)
