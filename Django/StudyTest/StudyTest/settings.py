@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-z5p3otx8f-*p%7^l7gz&@sdn8un2w2%w-acc_-kokk5p28(346
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True   #Its false mean not work any link so have to describe allowed host little under when go production.
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1']
+ALLOWED_HOSTS = []
+# 'localhost','127.0.0.1'
 
 
 # Application definition
@@ -39,13 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'projects.apps.ProjectsConfig'
+    'projects.apps.ProjectsConfig',
+    'users.apps.UserConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
