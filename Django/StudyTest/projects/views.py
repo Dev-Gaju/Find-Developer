@@ -31,7 +31,7 @@ def creteProject(request):
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('projects'
+            return redirect('projects')
 
     context = {'form': form}
     return render(request, 'projects/project_form.html', context)
