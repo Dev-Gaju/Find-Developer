@@ -40,93 +40,21 @@ class Skill(models.Model):
         return str(self.name)
 
 
-@receiver(post_save, sender=Profiles)
-def createProfile(sender, instance, created, **kwargs):
-    if created:
-        user = instance
-        profile = Profiles.objects.create(
-            user=user,
-            username=user.username,
-            email=user.email,
-            name=user.name
-        )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def deleteUser(sender, instance, **kwargs):
-    print("deleting user")
-
-
-post_save.connect(createProfile, sender=User)
-post_delete.connect(deleteUser, sender=Profiles)
+# @receiver(post_save, sender=Profiles)
+# def createProfile(sender, instance, created, **kwargs):
+#     if created:
+#         user = instance
+#         profile = Profiles.objects.create(
+#             user=user,
+#             username=user.username,
+#             email=user.email,
+#             name=user.name
+#         )
+#
+#
+# def deleteUser(sender, instance, **kwargs):
+#     print("deleting user")
+#
+#
+# post_save.connect(createProfile, sender=User)
+# post_delete.connect(deleteUser, sender=Profiles)
