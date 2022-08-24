@@ -75,6 +75,8 @@ def userProfiles(request, pk):
     return render(request, 'users/user-profile.html', context)
 
 
+@login_required(login_url='login')
 def userAccount(request):
-    context ={}
+    profile = request.user.
+    context = {profile: 'profile'}
     return render(request, 'users/account.html', context)
